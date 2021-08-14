@@ -3,6 +3,9 @@
 @section('body')
 <div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar {{ isset($topic) ? 'topic-page' : '' }}">
 	<ul>
+		<li class="text-yellow-300 bg-gray-900 group border-b border-gray-800">
+			<a class="block px-6 py-4 group-hover:bg-gray-800" href="{{ url('/new') }}">/new</a>
+		</li>
 		@foreach ($topics as $list_topic)
 		<li class="text-purple-400 bg-gray-900 {{ (isset($topic) && $topic->id === $list_topic->id) ? 'sidebar-active' : '' }} group border-b border-gray-800">
 			<a href="{{ url('/post/' . $list_topic->id) }}" class="py-4 px-6 block group-hover:bg-gray-800">
