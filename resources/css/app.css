@@ -3,11 +3,47 @@
 @tailwind utilities;
 
 .h-screen-center {
-	height: calc(100vh - 2.25rem - 4rem - 6rem);
+	height: auto;
 }
 
 .h-screen-center-inner {
-	height: calc(100vh - 2.25rem - 4rem - 6rem - 2px);
+	height: auto;
+}
+
+.content-area-offset-bottom {
+	height: auto;
+}
+
+@media (min-width: 640px) {
+	.h-screen-center {
+		height: calc(100vh - 2.25rem - 4rem - 6rem);
+	}
+
+	.h-screen-center-inner {
+		height: calc(100vh - 2.25rem - 4rem - 6rem - 2px);
+	}
+
+	.content-area-offset-bottom {
+		height: calc(100vh - 2.25rem - 4rem - 6rem - 2px - 8rem);
+	}
+}
+
+@media (max-width: 639px) {
+	.sidebar {
+		@apply block;
+	}
+
+	.main-content {
+		@apply hidden;
+	}
+
+	.sidebar.topic-page {
+		@apply hidden;
+	}
+
+	.main-content.topic-page {
+		@apply block;
+	}
 }
 
 .sidebar-active {
@@ -21,8 +57,4 @@
 
 .sidebar-active div {
 	@apply text-gray-500;
-}
-
-.content-area-offset-bottom {
-	height: calc(100vh - 2.25rem - 4rem - 6rem - 2px - 8rem);
 }

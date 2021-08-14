@@ -1,20 +1,20 @@
 @extends('layouts.master')
 
 @section('body')
-<div class="w-full sm:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto">
+<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar {{ isset($topic) ? 'topic-page' : '' }}">
 	<ul>
 		@foreach ($topics as $list_topic)
 		<li class="text-purple-400 bg-gray-900 {{ (isset($topic) && $topic->id === $list_topic->id) ? 'sidebar-active' : '' }} group border-b border-gray-800">
 			<a href="{{ url('/post/' . $list_topic->id) }}" class="py-4 px-6 block group-hover:bg-gray-800">
 				<h4 class="font-bold">{{ $list_topic->title }}</h4>
 				<p class="text-gray-600 leading-tight">{{ $list_topic->posts->last()->content }}</p>
-				<div class="text-sm mt-1 text-gray-700">Last: {{ '@' }}{{ $list_topic->last_user->name }}, {{ Carbon\Carbon::parse($list_topic->created_at)->diffForHumans() }}</div>
+				<div class="text-sm mt-1 text-gray-700">Last: {{ '@' }}{{ $list_topic->last_user->name }}, {{ Carbon\Carbon::parse($list_topic->updated_at)->diffForHumans() }}</div>
 			</a>
 		</li>
 		@endforeach
 	</ul>
 </div>
-<div class="w-full sm:w-3/4 bg-gray-800">
+<div class="w-full sm:w-1/2 lg:w-3/4 bg-gray-800 main-content {{ isset($topic) ? 'topic-page' : '' }}">
 	@if (isset($topic))
 	<div class="overflow-auto content-area-offset-bottom" id="replies">
 		<h4 class="text-gray-200 font-bold text-2xl py-4 px-6 sticky top-0 bg-gray-800">{{ $topic->title }}</h4>
@@ -49,7 +49,9 @@
 @section('script')
 <script>
 @if (Auth::check())
-document.querySelector('[name="reply_content"]').focus();
+if (window.innerWidth >= 640) {
+	document.querySelector('[name="reply_content"]').focus();
+}
 
 document.querySelector('[name="reply_content"]').addEventListener('keydown', function (e) {
 	if (!e.shiftKey && e.keyCode === 13) {

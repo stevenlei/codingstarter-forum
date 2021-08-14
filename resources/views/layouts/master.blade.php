@@ -9,27 +9,27 @@
 
     @livewireStyles
 </head>
-<body class="bg-gray-900 p-16 pt-12">
+<body class="bg-gray-900 p-4 pt-4 sm:p-16 sm:pt-12">
     
-    <header class="flex justify-between items-end my-4">
+    <header class="flex justify-between items-end my-4 flex-wrap">
         <h1 class="text-gray-300 text-3xl font-bold pl-6">
             <a href="{{ url('/') }}">CodingStarter</a>
         </h1>
         @if (Auth::check())
-        <div class="text-gray-300 mr-6">
+        <div class="text-gray-300 mr-0 sm:mr-6 ml-6 sm:ml-0 mt-2 sm:mt-0">
             Hello, <span class="text-yellow-300">{{ '@' }}{{ Auth::user()->name }}</span>.
             <a href="{{ url('/logout') }}" class="ml-2">(Logout)</a>
         </div>
         @else
-        <a href="{{ url('/auth/github') }}" class="text-yellow-300 mr-6">Sign in with Github</a>
+        <a href="{{ url('/auth/github') }}" class="text-yellow-300 mr-0 sm:mr-6 ml-6 sm:ml-0 mt-2 sm:mt-0">Sign in with Github</a>
         @endif
     </header>
 
-    <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex overflow-hidden h-screen-center">
+    <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex flex-wrap sm:overflow-hidden h-screen-center">
         @yield('body')
     </div>
 
-    <footer class="text-center text-gray-500 w-full fixed bottom-6 left-0">
+    <footer class="text-center text-gray-500 w-full sm:fixed sm:bottom-6 sm:left-0 mt-6 sm:mt-0">
         Made with ❤️ in Macao
     </footer>
 
