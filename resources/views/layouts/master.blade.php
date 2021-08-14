@@ -13,7 +13,14 @@
     
     <header class="flex justify-between items-end my-4">
         <h1 class="text-gray-300 text-3xl font-bold pl-6">CodingStarter</h1>
-        <a href="#" class="text-yellow-300 mr-6">Sign in with Github</a>
+        @if (Auth::check())
+        <div class="text-gray-300 mr-6">
+            Hello, <span class="text-yellow-300">{{ '@' }}{{ Auth::user()->name }}</span>.
+            <a href="{{ url('/logout') }}" class="ml-2">(Logout)</a>
+        </div>
+        @else
+        <a href="{{ url('/auth/github') }}" class="text-yellow-300 mr-6">Sign in with Github</a>
+        @endif
     </header>
 
     <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex overflow-auto h-screen-center">

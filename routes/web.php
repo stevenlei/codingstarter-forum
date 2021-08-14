@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home.index');
 });
+
+
+// Logout
+Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
+
+// Github OAuth
+Route::get('/auth/github', 'App\Http\Controllers\Auth\SocialLoginController@handleGithubAuth');
+Route::get('/auth/github/callback', 'App\Http\Controllers\Auth\SocialLoginController@handleGithubCallback');
