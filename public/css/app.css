@@ -31887,6 +31887,11 @@ video {
   color: rgba(156, 163, 175, var(--tw-text-opacity));
 }
 
+.sidebar-active div {
+  --tw-text-opacity: 1;
+  color: rgba(107, 114, 128, var(--tw-text-opacity));
+}
+
 .content-area-offset-bottom {
   height: calc(100vh - 2.25rem - 4rem - 6rem - 2px - 8rem);
 }
