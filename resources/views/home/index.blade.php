@@ -4,11 +4,12 @@
 <div class="w-full sm:w-1/4 bg-gray-800 h-screen-center-inner overflow-auto">
 	<ul>
 		@for ($i = 0; $i < 12; $i++)
-		<li class="text-purple-400 bg-gray-900 {{ ($i == 2) ? 'sidebar-active' : '' }} group">
+		<li class="text-purple-400 bg-gray-900 {{ ($i == 2) ? 'sidebar-active' : '' }} group border-b border-gray-800">
 			<a href="#" class="py-4 px-6 block group-hover:bg-gray-800">
 				<h4 class="font-bold">Lorem ipsum dolor sit amet</h4>
 				<p class="text-gray-600 leading-tight">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua</p>
+				<div class="text-sm mt-1 text-gray-700">Last: @stevenlei, 5 mins ago</div>
 			</a>
 		</li>
 		@endfor
