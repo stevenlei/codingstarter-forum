@@ -25,6 +25,8 @@
         @endif
     </header>
 
+    @yield('postheader')
+
     <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex flex-wrap sm:overflow-hidden h-screen-center">
         @yield('body')
     </div>
