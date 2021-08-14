@@ -48,6 +48,7 @@
 
 @section('script')
 <script>
+@if (Auth::check())
 document.querySelector('[name="reply_content"]').focus();
 
 document.querySelector('[name="reply_content"]').addEventListener('keydown', function (e) {
@@ -56,6 +57,7 @@ document.querySelector('[name="reply_content"]').addEventListener('keydown', fun
 		e.preventDefault();
 	}
 });
+@endif
 
 @if (Request::get('bottom'))
 let replies = document.querySelector('#replies');
