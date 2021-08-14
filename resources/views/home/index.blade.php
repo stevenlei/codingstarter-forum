@@ -70,10 +70,19 @@ if (window.innerWidth >= 640) {
 	document.querySelector('[name="reply_content"]').focus();
 }
 
+let isSending = false;
+
 document.querySelector('[name="reply_content"]').addEventListener('keydown', function (e) {
-	if (!e.shiftKey && e.keyCode === 13) {
+	if (!e.shiftKey && e.keyCode === 13 && !isSending) {
+		if (e.target.value.trim() === '') {
+			e.preventDefault();
+			return;
+		}
+
 		document.querySelector('#reply_form').submit();
 		e.preventDefault();
+
+		isSending = true; // Prevent duplicated submissions
 	}
 });
 @endif
