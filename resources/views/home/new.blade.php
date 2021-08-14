@@ -9,8 +9,8 @@
     @foreach ($topics as $list_topic)
     <li class="text-purple-400 bg-gray-900 group border-b border-gray-800 opacity-40">
       <a href="{{ url('/post/' . $list_topic->id) }}" class="py-4 px-6 block pointer-events-none">
-        <h4 class="font-bold">{{ $list_topic->title }}</h4>
-        <p class="text-gray-600 leading-tight">{{ $list_topic->posts->last()->content }}</p>
+        <h4 class="font-bold truncate">{{ $list_topic->title }}</h4>
+        <p class="text-gray-600 leading-tight break-all">{{ $list_topic->posts->last()->excerpt() }}</p>
         <div class="text-sm mt-1 text-gray-700">Last: {{ '@' }}{{ $list_topic->last_user->name }}, {{ Carbon\Carbon::parse($list_topic->updated_at)->diffForHumans() }}</div>
       </a>
     </li>

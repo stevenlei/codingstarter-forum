@@ -20,4 +20,15 @@ class Post extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function excerpt($limit = 180)
+    {
+        $content = strip_tags($this->content);
+
+        if (mb_strlen($content, 'utf-8') > $limit ) {
+            return mb_substr($content, 0, $limit, 'utf-8') . '...';
+        }
+
+        return $content;
+    }
 }
