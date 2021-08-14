@@ -26,7 +26,7 @@
 		@foreach ($topic->posts as $post)
 		<div class="px-6 py-4 pb-8 border-b border-gray-700">
 			<div class="flex justify-between">
-				<h5 class="text-yellow-300">{{ '@' }}{{ $topic->user->name }}</h5>
+				<h5 class="text-yellow-300">{{ '@' }}{{ $post->user->name }}</h5>
 				<span class="text-gray-500 text-sm">{{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
 			</div>
 			<div class="content text-gray-300 mt-3">
