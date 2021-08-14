@@ -48,6 +48,8 @@
 
 @section('script')
 <script>
+document.querySelector('[name="reply_content"]').focus();
+
 document.querySelector('[name="reply_content"]').addEventListener('keydown', function (e) {
 	if (!e.shiftKey && e.keyCode === 13) {
 		document.querySelector('#reply_form').submit();
