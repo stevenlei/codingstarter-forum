@@ -34,8 +34,14 @@
 		</div>
 		@endfor
 	</div>
-	<div class="bg-gray-700 h-32 text-gray-200">
+	<div class="bg-gray-700 h-32 text-gray-200 flex justify-center items-center">
+		@if (Auth::check())
 		<textarea class="bg-gray-700 h-32 text-gray-200 w-full outline-none py-4 px-6" placeholder="Say something..."></textarea>
+		@else
+		<div>
+			<a href="/auth/github" class="text-yellow-300">Sign in with Github</a> to continue.
+		</div>
+		@endif
 	</div>
 </div>
 @stop
