@@ -9,9 +9,20 @@
 
     @livewireStyles
 </head>
-<body>
+<body class="bg-gray-900 p-16 pt-12">
     
-    @yield('body')
+    <header class="flex justify-between items-end my-4">
+        <h1 class="text-gray-300 text-3xl font-bold pl-6">CodingStarter</h1>
+        <a href="#" class="text-yellow-300 mr-6">Sign in with Github</a>
+    </header>
+
+    <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex overflow-auto h-screen-center">
+        @yield('body')
+    </div>
+
+    <footer class="text-center text-gray-500 w-full fixed bottom-6 left-0">
+        Made with ❤️ in Macao
+    </footer>
 
     @livewireScripts
 </body>

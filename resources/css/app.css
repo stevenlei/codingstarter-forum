@@ -2,3 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.h-screen-center {
+	height: calc(100vh - 2.25rem - 4rem - 6rem);
+}
+
+.h-screen-center-inner {
+	height: calc(100vh - 2.25rem - 4rem - 6rem - 2px);
+}
+
+.sidebar-active {
+	@apply bg-gray-800;
+	@apply text-purple-500;
+}
+
+.sidebar-active p {
+	@apply text-gray-400;
+}
+
+.content-area-offset-bottom {
+	height: calc(100vh - 2.25rem - 4rem - 6rem - 2px - 8rem);
+}
