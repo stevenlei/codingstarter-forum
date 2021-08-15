@@ -42,7 +42,7 @@
 				<span class="text-gray-500 text-sm">{{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
 			</div>
 			<div class="content text-gray-300 mt-3 break-all">
-				@markdown{!! $post->content !!}@endmarkdown
+				@markdown($post->content)
 			</div>
 		</div>
 		@endforeach
