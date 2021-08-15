@@ -9,7 +9,7 @@
 		<li class="flex w-1/2 sm:w-full flex-shrink-0 flex-grow-0 text-purple-400 bg-gray-900 {{ ($currentTopicId === $topic->id) ? 'sidebar-active' : '' }} group border-b border-gray-800">
 			<a wire:click.prevent="$emit('viewTopic', {{ $topic->id }})" href="{{ url('/post/' . $topic->id) }}" class="w-full py-4 px-6 block group-hover:bg-gray-800">
 				<h4 class="font-bold truncate">{{ $topic->title }}</h4>
-				<p class="text-gray-600 leading-tight break-all">{{ $topic->posts->last()->excerpt() }}</p>
+				<p class="text-gray-600 leading-tight truncate">{{ $topic->posts->last()->excerpt(30) }}</p>
 				<div class="text-sm mt-1 text-gray-700">Last: {{ '@' }}{{ $topic->last_user->name }}, {{ Carbon\Carbon::parse($topic->updated_at)->diffForHumans() }}</div>
 			</a>
 		</li>
