@@ -28,24 +28,6 @@
 	}
 }
 
-@media (max-width: 639px) {
-	.sidebar {
-		@apply block;
-	}
-
-	.main-content {
-		@apply hidden;
-	}
-
-	.sidebar.topic-page {
-		@apply hidden;
-	}
-
-	.main-content.topic-page {
-		@apply block;
-	}
-}
-
 .sidebar-active {
 	@apply bg-gray-800;
 	@apply text-purple-500;

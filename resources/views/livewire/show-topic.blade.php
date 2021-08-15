@@ -1,4 +1,4 @@
-<div class="w-full sm:w-1/2 lg:w-3/4 bg-gray-800 main-content {{ ($topic) ? 'topic-page' : '' }}" wire:poll.5000ms>
+<div class="w-full sm:w-1/2 lg:w-3/4 bg-gray-800 main-content" wire:poll.5000ms>
 	@if ($topic)
 	<div class="overflow-auto content-area-offset-bottom" id="replies">
 		<h4 class="text-gray-200 font-bold text-2xl py-4 px-6 sticky top-0 bg-gray-800 break-all">{{ $topic->title }}</h4>

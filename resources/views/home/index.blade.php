@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('postheader')
-<livewire:back-button :show="isset($topic)" />
+{{-- <livewire:back-button :show="isset($topic)" /> --}}
 @stop
 
 @section('body')
