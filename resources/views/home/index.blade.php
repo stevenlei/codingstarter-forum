@@ -42,7 +42,7 @@
 				<span class="text-gray-500 text-sm">{{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
 			</div>
 			<div class="content text-gray-300 mt-3 break-all">
-				{!! nl2br(e($post->content)) !!}
+				@markdown{!! $post->content !!}@endmarkdown
 			</div>
 		</div>
 		@endforeach
@@ -64,6 +64,10 @@
 @stop
 
 @section('script')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<link rel="stylesheet" href="{{ asset('css/dracula.css') }}">
+
 <script>
 @if (Auth::check())
 if (window.innerWidth >= 640) {
@@ -91,5 +95,7 @@ document.querySelector('[name="reply_content"]').addEventListener('keydown', fun
 let replies = document.querySelector('#replies');
 replies.scrollTop = replies.scrollHeight;
 @endif
+
+hljs.highlightAll();
 </script>
 @stop

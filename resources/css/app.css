@@ -58,3 +58,27 @@
 .sidebar-active div {
 	@apply text-gray-500;
 }
+
+.content h1 {
+	@apply text-4xl font-bold my-2;
+}
+
+.content h2 {
+	@apply text-3xl font-bold my-2;
+}
+
+.content h3 {
+	@apply text-2xl font-bold my-2;
+}
+
+.content h4 {
+	@apply text-xl font-bold my-2;
+}
+
+.content h5 {
+	@apply font-bold my-2;
+}
+
+.content ul {
+	@apply list-disc list-inside;
+}
