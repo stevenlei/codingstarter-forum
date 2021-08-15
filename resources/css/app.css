@@ -24,7 +24,7 @@
 	}
 
 	.content-area-offset-bottom {
-		height: calc(100vh - 2.25rem - 4rem - 6rem - 2px - 8rem);
+		height: calc(100vh - 2.25rem - 4rem - 6rem - 12rem);
 	}
 }
 
