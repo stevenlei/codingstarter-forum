@@ -1,4 +1,4 @@
-<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar {{ $currentTopicId ? 'topic-page' : '' }}" wire:poll.keep-alive>
+<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar {{ $currentTopicId ? 'topic-page' : '' }}" wire:poll.5000ms>
 	<ul>
 		@if (Auth::check())
 		<li class="text-yellow-300 bg-gray-900 group border-b border-gray-800">
