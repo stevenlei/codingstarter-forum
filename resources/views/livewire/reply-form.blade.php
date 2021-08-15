@@ -6,8 +6,10 @@
 		<button type="submit" class="h-12 flex justify-center items-center block w-full box-border bg-purple-700 text-white focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-80">Submit</button>
 	</form>
 	@else
-	<div>
-		<a href="/auth/github" class="text-yellow-300">Sign in with Github</a> to continue.
+	<div class="flex justify-center items-center flex-1">
+		<div>
+			<a href="/auth/github" class="text-yellow-300">Sign in with Github</a> to continue.
+		</div>
 	</div>
 	@endif
 </div>
