@@ -1,4 +1,4 @@
-<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar" wire:poll.5000ms>
+<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-900 h-screen-center-inner overflow-auto sidebar rounded sm:rounded-br-none sm:rounded-tr-none" wire:poll.5000ms>
 	<ul class="w-full flex flex-row sm:flex-col">
 		@if (Auth::check())
 		<li class="flex text-yellow-300 bg-gray-900 group border-b border-gray-800">
