@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodingStarter</title>
 
-    <link href="{{ asset('css/app.css') }}?v3" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?v4" rel="stylesheet">
 
     @livewireStyles
 </head>
