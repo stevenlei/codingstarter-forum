@@ -14,5 +14,10 @@
 			</a>
 		</li>
 		@endforeach
+		@if ($haveMoreResults)
+		<li class="flex text-yellow-300 bg-gray-900 group border-b border-gray-800">
+			<a class="flex-1 block px-6 py-4 group-hover:bg-gray-800" wire:click.prevent="loadMore({{ $offset + 1 }})">More...</a>
+		</li>
+		@endif
 	</ul>
 </div>

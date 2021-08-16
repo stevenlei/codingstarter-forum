@@ -4,10 +4,15 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Topic;
+use Livewire\WithPagination;
 
 class TopicList extends Component
 {
+	use WithPagination;
+
 	public $currentTopicId;
+	public $limit = 30;
+	public $offset = 0;
 
 	protected $listeners = [
 		'viewTopic' => 'viewTopic',
@@ -30,12 +35,20 @@ class TopicList extends Component
 		$this->currentTopicId = null;
 	}
 
+	public function loadMore($offset)
+	{
+		$this->offset = $offset;
+	}
+
     public function render()
     {
-    	$topics = Topic::orderBy('updated_at', 'DESC')->get();
+		$topics = Topic::orderBy('updated_at', 'DESC')->limit($this->limit * ($this->offset + 1))->get();
+
+		$haveMoreResults = (Topic::count() > $this->limit * ($this->offset + 1));
 
         return view('livewire.topic-list', [
         	'topics' => $topics,
+        	'haveMoreResults' => $haveMoreResults,
         ]);
     }
 }
