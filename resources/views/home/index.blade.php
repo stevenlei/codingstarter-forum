@@ -25,7 +25,7 @@ Livewire.on('postAdded', () => {
 			replies.scrollTop = replies.scrollHeight;
 			clearInterval(scrollToBottomTimer);
 		}
-    }, 100);
+    }, 500);
 });
 
 const changeUrl = (url) => {

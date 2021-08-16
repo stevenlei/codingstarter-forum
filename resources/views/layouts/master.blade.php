@@ -23,6 +23,8 @@
         Made with ❤️ in Macao
     </footer>
 
+    <script src="{{ asset('js/app.js') }}?v1"></script>
+
     @livewireScripts
     @yield('script')
 </body>

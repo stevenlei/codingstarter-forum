@@ -14,7 +14,7 @@
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
-        "pusher/pusher-php-server": "~5.0"
+        "pusher/pusher-php-server": "^4.1"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

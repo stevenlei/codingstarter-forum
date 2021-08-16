@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Topic;
 use App\Models\Post;
+use App\Events\PostAdded;
 
 class ReplyForm extends Component
 {
@@ -54,6 +55,9 @@ class ReplyForm extends Component
         // Refresh the current page
         $this->emit('viewTopic', $this->topic->id);
         $this->emit('postAdded');
+
+        // Broadcast Event
+        event(new PostAdded);
     }
 
     public function render()

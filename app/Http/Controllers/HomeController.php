@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Topic;
 use App\Models\Post;
+use App\Events\PostAdded;
 
 class HomeController extends Controller
 {
@@ -43,6 +44,9 @@ class HomeController extends Controller
         $post->content = request('content');
         $post->ip = request()->ip();
         $post->save();
+
+        // Broadcast Event
+        event(new PostAdded);
 
         return redirect()->to('/post/' . $topic->id);
     }

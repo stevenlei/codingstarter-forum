@@ -17,6 +17,7 @@ class TopicList extends Component
 	protected $listeners = [
 		'viewTopic' => 'viewTopic',
 		'toHome' => 'toHome',
+		'echo:forum,PostAdded' => 'render',
 	];
 
 	public function viewTopic($id)
