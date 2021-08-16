@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+*::-webkit-scrollbar {
+  width: .5rem;
+  @apply bg-gray-900;
+}
+ 
+*::-webkit-scrollbar-track {
+  /*box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);*/
+}
+ 
+*::-webkit-scrollbar-thumb {
+  @apply bg-gray-700;
+  /*outline: 1px solid slategrey;*/
+}
+
 .h-screen-center {
 	height: auto;
 }
