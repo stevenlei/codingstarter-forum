@@ -1,63 +1,48 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# CodingStarter 論壇
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 前言
 
-## About Laravel
+CodingStarter [(https://codingstarter.com)](https://codingstarter.com) ，一個屬於網頁開發者的論壇，同時是讓開發者學習與實踐的項目。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+我們在學習新技術的時候，常常遇到學了但沒有案例去實現、不知道項目開發的流程、沒有團隊合作經驗等問題。這個項目就是為此而生：它是一個真正上線的項目，你可以將想法付諸實行，提 PR，動手寫，一直迭代更新。
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 技術棧
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+本項目使用到的技術包括：
 
-## Learning Laravel
+- 後端
+  - Laravel 框架 (PHP)
+  - MySQL 資料庫
+- 前端
+  - Laravel Blade 模版
+  - Tailwind CSS
+  - Livewire
+- Web Socket (Laravel WebSockets + Echo)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+下一步會進行前後端分離，希望以 Nuxt (Vue) 建立新的前端版本。當然，後端也就需要準備好一套 API。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 版本
 
-## Laravel Sponsors
+目前是一個很初步的階段，就定它為 0.1 版本。
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### v0.1
+- 建立主題
+  - 主題分頁 (瀏覽更多)
+- 瀏覽主題及帖子
+- 回覆主題
+- GitHub 登入
+- 以 Tailwind CSS 建立的 Dark Theme 佈局
+- 以 Web Socket 方式，在有新主題或回覆時，進行實時頁面刷新。
+- 免刷新瀏覽頁面（除了 /new 建立主題頁）
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
+## 教學資源
 
-## Contributing
+- **CodingStartup** —— Made with ❤️ in Macao
+  - [BiliBili](https://space.bilibili.com/451368848)
+  - [YouTube](https://youtube.com/codingstartup)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+(本文檔待完善)
