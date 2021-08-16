@@ -34,6 +34,7 @@ CodingStarter [(https://codingstarter.com)](https://codingstarter.com) ，一個
 - 以 Tailwind CSS 建立的 Dark Theme 佈局
 - 以 Web Socket 方式，在有新主題或回覆時，進行實時頁面刷新。
 - 免刷新瀏覽頁面（除了 /new 建立主題頁）
+- 支持 Markdown 及代碼塊高亮
 
 ---
 
