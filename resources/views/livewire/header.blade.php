@@ -2,7 +2,7 @@
     <h1 class="text-gray-300 text-3xl font-bold pl-6">
         <a href="{{ url('/') }}" class="hover:text-yellow-300">CodingStarter</a>
         <span class="block sm:inline text-sm ml-0 mt-2 sm:mt-0 sm:ml-6 font-normal text-gray-500">
-            8/15 11:00pm: 完成免刷新跳頁、自動刷新（目前是 long-poll，socket 待處理），優化了手機版的佈局。
+            8/16 5:16pm: 🎉Web Socket 整合成功！
         </span>
     </h1>
     @if (Auth::check())
