@@ -13,7 +13,17 @@ class Topic extends Model
 
     public function posts()
     {
-        return $this->hasMany('App\Models\Post')->orderBy('created_at', 'ASC');
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function getOrderedPosts($order)
+    {
+        if ($order === 'hot')
+        {
+            return $this->posts()->orderBy('likes_count', 'DESC')->orderBy('created_at', 'ASC')->get();
+        } else {
+            return $this->posts()->orderBy('created_at', 'ASC')->get();
+        }
     }
 
     public function user()
@@ -24,5 +34,18 @@ class Topic extends Model
     public function last_user()
     {
         return $this->belongsTo('App\Models\User', 'last_post_user_id', 'id');
+    }
+
+    // TODO: Optimisation required. Fetch all likes/dislikes status for one topic, and should includes the status of reaction for current logged-in user
+    public function getReactions()
+    {
+        $reactions = collect($this->posts)->map(function ($post) {
+            return [
+                'likes' => $post->likes_count,
+                'dislikes' => $post->dislikes_count,
+            ];
+        })->toArray();
+
+        return $reactions;
     }
 }
