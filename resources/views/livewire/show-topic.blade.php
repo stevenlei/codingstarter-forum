@@ -20,11 +20,11 @@
 				<div class="the-content">@markdown($post->content)</div>
 				<div class="mt-6 flex">
 					<a wire:click="toggleReaction('like', {{ $post->id }})" class="reaction-badge inline-block flex cursor-pointer group {{ $post->isLiked() ? 'active' : '' }} {{ !\Auth::check() ? 'pointer-events-none' : '' }}">
-						<svg viewBox="0 0 24 24" class="w-6 fill-current text-gray-600 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"><path opacity=".87" fill="none" d="M0 0h24v24H0V0Z"/><path d="M13.12 2.06L7.58 7.6c-.37.37-.58.88-.58 1.41V19c0 1.1.9 2 2 2h9c.8 0 1.52-.48 1.84-1.21l3.26-7.61C23.94 10.2 22.49 8 20.34 8h-5.65l.95-4.58c.1-.5-.05-1.01-.41-1.37 -.59-.58-1.53-.58-2.11.01ZM3 21c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2v8c0 1.1.9 2 2 2Z"/></svg>
+						<svg viewBox="0 0 24 24" class="w-6 h-6 fill-current text-gray-600 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg"><path opacity=".87" fill="none" d="M0 0h24v24H0V0Z"/><path d="M13.12 2.06L7.58 7.6c-.37.37-.58.88-.58 1.41V19c0 1.1.9 2 2 2h9c.8 0 1.52-.48 1.84-1.21l3.26-7.61C23.94 10.2 22.49 8 20.34 8h-5.65l.95-4.58c.1-.5-.05-1.01-.41-1.37 -.59-.58-1.53-.58-2.11.01ZM3 21c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2s-2 .9-2 2v8c0 1.1.9 2 2 2Z"/></svg>
 						<span class="inline-block ml-1 text-gray-400">{{ $post->likes_count }}</span>
 					</a>
 					<a wire:click="toggleReaction('dislike', {{ $post->id }})" class="reaction-badge inline-block flex ml-4 cursor-pointer group {{ $post->isDisliked() ? 'active' : '' }} {{ !\Auth::check() ? 'pointer-events-none' : '' }}">
-						<svg viewBox="0 0 24 24" class="w-6 relative top-1 fill-current text-gray-600 group-hover:text-gray-500 {{ $post->isDisliked() ? 'text-yellow-300' : '' }}" xmlns="http://www.w3.org/2000/svg"><path opacity=".87" fill="none" d="M0 0h24v24H0V0Z"/><path d="M10.88 21.94l5.53-5.54c.37-.37.58-.88.58-1.41V5c0-1.1-.9-2-2-2H6c-.8 0-1.52.48-1.83 1.21L.91 11.82C.06 13.8 1.51 16 3.66 16h5.65l-.95 4.58c-.1.5.05 1.01.41 1.37 .59.58 1.53.58 2.11-.01ZM21 3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2s2-.9 2-2V5c0-1.1-.9-2-2-2Z"/></svg>
+						<svg viewBox="0 0 24 24" class="w-6 h-6 relative top-1 fill-current text-gray-600 group-hover:text-gray-500 {{ $post->isDisliked() ? 'text-yellow-300' : '' }}" xmlns="http://www.w3.org/2000/svg"><path opacity=".87" fill="none" d="M0 0h24v24H0V0Z"/><path d="M10.88 21.94l5.53-5.54c.37-.37.58-.88.58-1.41V5c0-1.1-.9-2-2-2H6c-.8 0-1.52.48-1.83 1.21L.91 11.82C.06 13.8 1.51 16 3.66 16h5.65l-.95 4.58c-.1.5.05 1.01.41 1.37 .59.58 1.53.58 2.11-.01ZM21 3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2s2-.9 2-2V5c0-1.1-.9-2-2-2Z"/></svg>
 						<span class="inline-block ml-1 text-gray-400">{{ $post->dislikes_count }}</span>
 					</a>
 				</div>
