@@ -8,10 +8,11 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     //
-    public function logout()
+    public function logout(Request $request)
     {
-        \Auth::logout();
-
+        if (strpos($request->header('accept'), 'text/html') !== false) {
+            \Auth::logout();
+        }
         return redirect()->to('/');
     }
 
