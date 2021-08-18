@@ -11,7 +11,7 @@ class TopicList extends Component
 	use WithPagination;
 
 	public $currentTopicId;
-	public $limit = 3;
+	public $limit = 30;
 	public $offset = 0;
 
 	protected $listeners = [
