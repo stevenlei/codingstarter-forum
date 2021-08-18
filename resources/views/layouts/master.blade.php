@@ -7,6 +7,8 @@
 
     <link href="{{ asset('css/app.css') }}?v8" rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
     @livewireStyles
 </head>
 <body class="bg-gray-900 p-4 pt-4 sm:p-16 sm:pt-12">
