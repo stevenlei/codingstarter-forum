@@ -6,7 +6,7 @@
         </span>
     </h1>
 
-    <div class="text-gray-500 dark:text-gray-300 mr-0 sm:mr-6 ml-0 sm:ml-6 sm:ml-0 mt-2 sm:mt-0 flex items-center w-full sm:w-auto justify-between">
+    <div class="text-gray-500 dark:text-gray-300 mr-0 sm:mr-6 ml-0 sm:ml-0 mt-2 sm:mt-0 flex items-center w-full sm:w-auto justify-between">
         <div class="mr-4">
             @if (Auth::check())
             Hello, <span class="text-blue-600 dark:text-yellow-300">{{ '@' }}{{ Auth::user()->name }}</span>.
@@ -16,7 +16,7 @@
             @endif
         </div>
 
-        <div class="bg-gray-200 dark:bg-gray-200 dark:bg-gray-800 rounded-full p-1 flex">
+        <div class="bg-gray-200 dark:bg-gray-800 rounded-full p-1 flex">
             <a class="inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer" :class="{'bg-gray-300 dark:bg-gray-700' : (theme === 'light')}" @click="theme = 'light'; localStorage.setItem('theme', 'light');">
                 <svg viewBox="0 0 24 24" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linejoin="round"><path d="M12 7.5v0c-2.49 0-4.5 2.01-4.5 4.5 0 2.48 2.01 4.5 4.5 4.5v0c2.48 0 4.5-2.02 4.5-4.5 0-2.49-2.02-4.5-4.5-4.5Z"/><path d="M12 .75V4.5"/><path d="M12 19.5v3.75"/><path d="M23.25 12H19.5"/><path d="M4.5 12H.75"/><path d="M20.25 3.75l-3 3"/><path d="M6.75 17.25l-3 3"/><path d="M20.25 20.25l-3-3"/><path d="M6.75 6.75l-3-3"/></g></svg>
             </a>

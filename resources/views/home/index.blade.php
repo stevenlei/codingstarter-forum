@@ -20,7 +20,7 @@
 Livewire.on('postAdded', () => {
 	// As don't know how to ensure the component is fully loaded yet...
 	let scrollToBottomTimer = setInterval(() => {
-    	let replies = document.querySelector('#replies');
+		let replies = document.querySelector('#replies');
 		if (replies.scrollTop != replies.scrollHeight) {
 			replies.scrollTop = replies.scrollHeight;
 			clearInterval(scrollToBottomTimer);
