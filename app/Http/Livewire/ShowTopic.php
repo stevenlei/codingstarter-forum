@@ -9,7 +9,7 @@ use App\Models\Post;
 class ShowTopic extends Component
 {
 	public $topic;
-	public $order = 'time';
+	public $order = 'default';
 
 	protected $listeners = [
 		'viewTopic' => 'viewTopic',

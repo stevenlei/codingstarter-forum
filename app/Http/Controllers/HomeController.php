@@ -40,6 +40,7 @@ class HomeController extends Controller
 
         $post = new Post;
         $post->topic_id = $topic->id;
+        $post->is_first = true;
         $post->user_id = \Auth::user()->id;
         $post->content = request('content');
         $post->ip = request()->ip();

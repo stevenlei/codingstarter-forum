@@ -18,11 +18,17 @@ class Topic extends Model
 
     public function getOrderedPosts($order)
     {
-        if ($order === 'hot')
+        if ($order === 'default')
         {
-            return $this->posts()->orderBy('likes_count', 'DESC')->orderBy('created_at', 'ASC')->get();
+            return $this->posts()->orderBy('is_first', 'DESC')->orderBy('created_at', 'ASC')->get();
+        } else if ($order === 'latest')
+        {
+            return $this->posts()->orderBy('is_first', 'DESC')->orderBy('created_at', 'DESC')->get();
+        } else if ($order === 'hot')
+        {
+            return $this->posts()->orderBy('is_first', 'DESC')->orderBy('likes_count', 'DESC')->orderBy('created_at', 'ASC')->get();
         } else {
-            return $this->posts()->orderBy('created_at', 'ASC')->get();
+            return [];
         }
     }
 

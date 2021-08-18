@@ -11,15 +11,25 @@
 				</span>
 				{{ $topic->title }}
 			</h4>
-			<div class="my-4 mr-6 self-start flex-shrink-0">
-				<div class="bg-gray-200 dark:bg-gray-900 rounded-full p-1 topic-ordering-badge flex">
-					<a class="inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer {{ ($order === 'time') ? 'active' : '' }}" wire:click="setOrder('time')">Time</a>
-					<a class="inline-block rounded-full text-xs sm:text-sm ml-0.5 py-1 px-3 cursor-pointer {{ ($order === 'hot') ? 'active' : '' }}" wire:click="setOrder('hot')">Hot</a>
-				</div>
-			</div>
 		</div>
 		@foreach ($topic->getOrderedPosts($order) as $index => $post)
 		<div wire:key="{{ $post->id }}" class="px-6 py-4 pb-8 border-b dark:border-gray-700">
+			
+			@if ($index === 1)
+			<div class="flex w-full justify-center mx-4 -mt-4">
+				<div class="mt-6 relative -top-px mr-2">
+					<svg viewBox="0 0 24 24" class="w-5 h-5 sm:w-6 sm:h-6 text-gray-400 dark:text-gray-500" xmlns="http://www.w3.org/2000/svg"><g fill="currentColor"><path d="M8.5 15.24H6.75v0c-.14 0-.25-.12-.25-.25V3.73v-.01c0-.56-.45-1-1-1 -.56 0-1 .44-1 1v11.25 0c0 .13-.12.25-.25.25H2.5v0c-.28 0-.5.22-.5.5 0 .13.05.25.14.35l3 3v0c.19.19.51.19.7 0l3-3v0c.19-.2.19-.52-.01-.71 -.1-.1-.22-.15-.36-.15Z"/><path d="M21 8.24h-1.25v0c-.14 0-.25-.12-.25-.25V1.73 1.72c0-.83-.68-1.51-1.5-1.51 -.35-.01-.68.11-.94.32l-1.69 1.35v0c-.43.35-.49.98-.14 1.4 .34.41.95.48 1.38.15l.46-.375v0c.1-.09.26-.07.35.03 .03.04.05.09.05.15v4.69 0c0 .13-.12.25-.25.25h-1.25v0c-.56 0-1 .44-1 1 0 .55.44 1 1 1h5v0c.55 0 1-.45 1-1 0-.56-.45-1-1-1Z"/><path d="M18 13.74l-.01-.01c-1.94-.01-3.51 1.56-3.51 3.49 -.01 1.93 1.56 3.5 3.49 3.5 .25 0 .5-.03.75-.09v0c.13-.03.26.05.29.19 .01.07-.01.16-.06.22v0c-.38.42-.92.67-1.49.67h-.5v0c-.56 0-1 .44-1 1 0 .55.44 1 1 1h.5v0c2.2 0 4-1.8 4-4v-2.5 0c0-1.94-1.57-3.5-3.5-3.5Zm0 5v0c-.83 0-1.5-.68-1.5-1.5 0-.83.67-1.5 1.5-1.5 .82 0 1.5.67 1.5 1.5v0c0 .82-.68 1.5-1.5 1.5Z"/></g></svg>
+				</div>
+				<div class="my-4 mr-6 self-start flex-shrink-0">
+					<div class="bg-gray-200 dark:bg-gray-900 rounded-full p-1 topic-ordering-badge flex">
+						<a class="inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer {{ ($order === 'default') ? 'active' : '' }}" wire:click="setOrder('default')">Default</a>
+						<a class="inline-block rounded-full text-xs sm:text-sm ml-0.5 py-1 px-3 cursor-pointer {{ ($order === 'latest') ? 'active' : '' }}" wire:click="setOrder('latest')">Latest</a>
+						<a class="inline-block rounded-full text-xs sm:text-sm ml-0.5 py-1 px-3 cursor-pointer {{ ($order === 'hot') ? 'active' : '' }}" wire:click="setOrder('hot')">Hot</a>
+					</div>
+				</div>
+			</div>
+			@endif
+
 			<div class="flex justify-between">
 				<h5 class="text-blue-700 dark:text-yellow-300">{{ '@' }}{{ $post->user->name }}</h5>
 				<span class="text-gray-400 dark:text-gray-500 text-sm">{{ Carbon\Carbon::parse($post->created_at)->diffForHumans() }}</span>
