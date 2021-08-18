@@ -11,11 +11,11 @@ class TopicList extends Component
 	use WithPagination;
 
 	public $currentTopicId;
-	public $limit = 30;
+	public $limit = 3;
 	public $offset = 0;
 
 	protected $listeners = [
-		'viewTopic' => 'viewTopic',
+		// 'viewTopic' => 'viewTopic',
 		'toHome' => 'toHome',
 		'echo:forum,PostAdded' => 'render',
 	];

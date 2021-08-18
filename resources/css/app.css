@@ -99,3 +99,5 @@
 .reaction-badge.active span {
 	@apply text-yellow-300 !important;
 }
+
+[x-cloak] { display: none !important; }
