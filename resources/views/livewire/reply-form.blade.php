@@ -1,4 +1,4 @@
-<div class="bg-gray-300 text-gray-600 dark:bg-gray-700 h-48 text-gray-200 flex">
+<div class="bg-gray-300 text-gray-600 dark:bg-gray-700 dark:text-gray-400 h-48 text-gray-200 flex">
 	@if (Auth::check())
 	<form wire:submit.prevent="submit" class="block w-full m-0 p-0 flex flex-col">
 		@csrf
