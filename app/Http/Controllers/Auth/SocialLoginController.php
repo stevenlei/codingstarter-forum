@@ -16,6 +16,9 @@ class SocialLoginController extends Controller
             return redirect()->to('/');
         }
 
+        // Set intended url for redirecting user to previous page
+        redirect()->setIntendedUrl(url()->previous());
+
         return Socialite::driver('github')->scopes(['read:user'])->redirect();
     }
 
@@ -43,7 +46,7 @@ class SocialLoginController extends Controller
 
         \Auth::login($user);
 
-        return redirect()->to('/');
+        return redirect()->intended('/');
     }
 
 }
