@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CodingStarter</title>
 
-    <link href="{{ asset('css/app.css') }}?v9" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?{{ time() }}" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 
