@@ -1,4 +1,4 @@
-<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-200 dark:bg-gray-900 h-screen-center-inner overflow-auto sidebar rounded sm:rounded-br-none sm:rounded-tr-none" x-data="{ activeTopicId: {{ ($currentTopicId) ? $currentTopicId : 'null' }} }">
+<div class="w-full sm:w-1/2 lg:w-1/4 bg-gray-200 dark:bg-gray-900 h-screen-center-inner overflow-auto sidebar rounded sm:rounded-br-none sm:rounded-tr-none" x-data="{ activeTopicId: @entangle('currentTopicId') }">
 	<ul class="w-full flex flex-row sm:flex-col">
 		@if (Auth::check())
 		<li wire:key="new" class="flex text-blue-700 dark:text-yellow-300 dark:bg-gray-900 group border-b border-gray-300 dark:border-gray-800">
@@ -6,7 +6,7 @@
 		</li>
 		@endif
 		@foreach ($topics as $topic)
-		<li wire:key="{{ $topic->id }}" x-cloak @click="activeTopicId = {{ $topic->id }}" :class="`flex w-3/5 sm:w-full flex-shrink-0 flex-grow-0 text-blue-400 dark:text-purple-400 bg-gray-200 dark:bg-gray-900 group border-b border-gray-300 dark:border-gray-800 ${(activeTopicId === {{ $topic->id }}) ? 'sidebar-active' : ''}`">
+		<li wire:key="{{ $topic->id }}" x-cloak @click="activeTopicId = {{ $topic->id }}" class="flex w-3/5 sm:w-full flex-shrink-0 flex-grow-0 text-blue-400 dark:text-purple-400 bg-gray-200 dark:bg-gray-900 group border-b border-gray-300 dark:border-gray-800" :class="{'sidebar-active': (activeTopicId === {{ $topic->id }})}">
 			<a wire:click.prevent="$emit('viewTopic', {{ $topic->id }})" href="{{ url('/post/' . $topic->id) }}" class="w-full max-w-full py-4 px-6 block group-hover:bg-gray-300 dark:group-hover:bg-gray-800">
 				<h4 class="font-bold w-full break-all truncate">{{ $topic->title }}</h4>
 				<p class="text-gray-400 dark:text-gray-600 leading-tight w-full break-all truncate">{{ $topic->posts->last()->excerpt(30) }}</p>

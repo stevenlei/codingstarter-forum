@@ -17,10 +17,10 @@
         </div>
 
         <div class="bg-gray-200 dark:bg-gray-200 dark:bg-gray-800 rounded-full p-1 flex">
-            <a :class="`inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer ${(theme === 'light') ? 'bg-gray-300 dark:bg-gray-700' : ''}`" @click="theme = 'light'; localStorage.setItem('theme', 'light');">
+            <a class="inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer" :class="{'bg-gray-300 dark:bg-gray-700' : (theme === 'light')}" @click="theme = 'light'; localStorage.setItem('theme', 'light');">
                 <svg viewBox="0 0 24 24" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linejoin="round"><path d="M12 7.5v0c-2.49 0-4.5 2.01-4.5 4.5 0 2.48 2.01 4.5 4.5 4.5v0c2.48 0 4.5-2.02 4.5-4.5 0-2.49-2.02-4.5-4.5-4.5Z"/><path d="M12 .75V4.5"/><path d="M12 19.5v3.75"/><path d="M23.25 12H19.5"/><path d="M4.5 12H.75"/><path d="M20.25 3.75l-3 3"/><path d="M6.75 17.25l-3 3"/><path d="M20.25 20.25l-3-3"/><path d="M6.75 6.75l-3-3"/></g></svg>
             </a>
-            <a :class="`inline-block rounded-full text-xs sm:text-sm ml-0.5 py-1 px-3 cursor-pointer ${(theme === 'dark') ? 'bg-gray-300 dark:bg-gray-700' : ''}`" @click="theme = 'dark'; localStorage.setItem('theme', 'dark');">
+            <a class="inline-block rounded-full text-xs sm:text-sm py-1 px-3 cursor-pointer" :class="{'bg-gray-300 dark:bg-gray-700' : (theme === 'dark')}" @click="theme = 'dark'; localStorage.setItem('theme', 'dark');">
                 <svg viewBox="0 0 24 24" class="w-4 h-4" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M21.97 14.881v0c-5.19 1.91-10.94-.74-12.86-5.93 -.83-2.24-.83-4.7-.01-6.94v0c.19-.52-.08-1.1-.59-1.29 -.23-.09-.48-.09-.7-.01V.7c-6.22 2.3-9.39 9.2-7.09 15.42 2.3 6.21 9.2 9.38 15.42 7.08 3.28-1.22 5.86-3.81 7.08-7.09v0c.19-.52-.08-1.1-.6-1.29 -.23-.09-.47-.09-.7-.01Z"/></svg>
             </a>
         </div>
