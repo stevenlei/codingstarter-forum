@@ -11,13 +11,13 @@
 
     @livewireStyles
 </head>
-<body class="bg-gray-900 p-4 pt-4 sm:p-16 sm:pt-12">
+<body class="bg-gray-100 dark:bg-gray-900 p-4 pt-4 sm:p-16 sm:pt-12">
     
     <livewire:header />
 
     @yield('postheader')
 
-    <div class="mx-auto bg-gray-800 border border-blue-900 rounded shadow-2xl flex flex-wrap sm:overflow-hidden h-screen-center">
+    <div class="mx-auto dark:bg-gray-800 border border-purple-200 dark:border-blue-900 rounded shadow-2xl flex flex-wrap sm:overflow-hidden h-screen-center">
         @yield('body')
     </div>
 

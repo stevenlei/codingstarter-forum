@@ -4,7 +4,7 @@
 
 *::-webkit-scrollbar {
   width: .5rem;
-  @apply bg-gray-900;
+  @apply bg-gray-200 dark:bg-gray-900;
 }
  
 *::-webkit-scrollbar-track {
@@ -12,7 +12,7 @@
 }
  
 *::-webkit-scrollbar-thumb {
-  @apply bg-gray-700;
+  @apply bg-gray-300 dark:bg-gray-700;
   /*outline: 1px solid slategrey;*/
 }
 
@@ -43,16 +43,24 @@
 }
 
 .sidebar-active {
-	@apply bg-gray-800;
-	@apply text-purple-500;
+	@apply bg-gray-300 dark:bg-gray-800;
+	@apply text-blue-600 dark:text-purple-500;
 }
 
 .sidebar-active p {
-	@apply text-gray-400;
+	@apply dark:text-gray-400;
+}
+
+.sidebar-active a p {
+	@apply text-gray-500;
+}
+
+.sidebar-active a div {
+	@apply text-gray-500;
 }
 
 .sidebar-active div {
-	@apply text-gray-500;
+	@apply dark:text-gray-500;
 }
 
 .content .the-content h1 {
@@ -84,20 +92,20 @@
 }
 
 .content .the-content a {
-	@apply underline text-yellow-600;
+	@apply underline text-blue-800 dark:text-yellow-600;
 }
 
 .topic-ordering-badge a {
-	@apply text-gray-400 hover:bg-gray-700 hover:text-gray-300;
+	@apply text-gray-500 bg-gray-200 hover:text-gray-400 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300;
 }
 
 .topic-ordering-badge a.active {
-	@apply bg-gray-700 text-gray-300 cursor-default;
+	@apply bg-gray-300 text-gray-500 dark:bg-gray-700 dark:text-gray-300 cursor-default;
 }
 
 .reaction-badge.active svg,
 .reaction-badge.active span {
-	@apply text-yellow-300 !important;
+	@apply text-blue-500 dark:text-yellow-300 !important;
 }
 
 [x-cloak] { display: none !important; }
