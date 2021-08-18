@@ -96,7 +96,7 @@
 }
 
 .topic-ordering-badge a {
-	@apply text-gray-500 bg-gray-200 hover:text-gray-400 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300;
+	@apply text-gray-500 bg-gray-200 hover:text-gray-400 dark:text-gray-400 dark:bg-gray-900 dark:hover:bg-gray-700 dark:hover:text-gray-300;
 }
 
 .topic-ordering-badge a.active {
