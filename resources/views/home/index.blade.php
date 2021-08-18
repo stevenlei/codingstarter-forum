@@ -37,6 +37,12 @@ Livewire.on('toHome', () => {
 });
 
 Livewire.on('viewTopic', (id) => {
+	// Scroll to top
+	let replies = document.querySelector('#replies');
+	if (replies !== null) {
+		replies.scrollTop = 0;
+	}
+
 	changeUrl(`/post/${id}`);
 });
 
