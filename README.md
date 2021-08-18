@@ -37,6 +37,8 @@ CodingStarter [(https://codingstarter.com)](https://codingstarter.com) ，一個
 - 支持 Markdown 及代碼塊高亮
 - 2021/08/17: 讚好／差評帖子功能
 - 2021/08/17: 按時間（順序）或熱度（讚好數量倒序）排序主題回覆帖文
+- 2021/08:18: 增加 Light Theme，並新增 Dark/Light Theme 切換按鈕
+- 2021/08/18: 優化帖文排序方式，可按時間順序/倒序/熱門排列
 
 ---
 
