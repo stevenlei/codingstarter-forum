@@ -31,3 +31,6 @@ Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout');
 // Github OAuth
 Route::get('/auth/github', 'App\Http\Controllers\Auth\SocialLoginController@handleGithubAuth');
 Route::get('/auth/github/callback', 'App\Http\Controllers\Auth\SocialLoginController@handleGithubCallback');
+
+// OAuth Exchange with Frontend Application (frontend -> backend[github login] -> backend[oauth server] -> frontend[callback])
+Route::get('/auth/github/exchange', 'App\Http\Controllers\Auth\SocialLoginController@handleGithubAuthExchange');

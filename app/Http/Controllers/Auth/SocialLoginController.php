@@ -12,12 +12,11 @@ class SocialLoginController extends Controller
     //
     public function handleGithubAuth(Request $request)
     {
-        if (\Auth::check()) {
-            return redirect()->to('/');
+        // If this is not an exchange request
+        if (! session('auth.exchange') ) {
+            // Set intended url for redirecting user to previous page
+            redirect()->setIntendedUrl(url()->previous());
         }
-
-        // Set intended url for redirecting user to previous page
-        redirect()->setIntendedUrl(url()->previous());
 
         return Socialite::driver('github')->scopes(['read:user'])->redirect();
     }
@@ -46,7 +45,47 @@ class SocialLoginController extends Controller
 
         \Auth::login($user);
 
+        // Get back the requested parameters from frontend, and send to our OAuth server (Laravel Passport)
+        if (session('auth.exchange') === 'github') {
+            $query = http_build_query([
+                'client_id' => session('auth.client_id'),
+                'redirect_uri' => session('auth.redirect_uri'),
+                'response_type' => session('auth.response_type'),
+                'scope' => session('auth.scope'),
+                'state' => session('auth.state'),
+            ]);
+
+            // Clean up the auth.* session
+            session()->forget('auth');
+
+            return redirect('/oauth/authorize?' . $query); // Should be redirected to redirect_uri provided by frontend application with OAuth code
+        }
+
+        // Redirect to intended url or `/`
         return redirect()->intended('/');
+    }
+
+    public function handleGithubAuthExchange(Request $request)
+    {
+        // Simple verification for the oauth client id
+        if (! \DB::table('oauth_clients')
+                ->where('id', request('client_id'))
+                ->exists() )
+        {
+            return abort(403, 'invalid_client_id');
+        }
+
+        // Put the parameters into sessions, get back those values after successful of github login
+        session([
+            'auth.exchange' => 'github',
+            'auth.client_id' => request('client_id'),
+            'auth.redirect_uri' => request('redirect_uri'),
+            'auth.response_type' => request('response_type'),
+            'auth.scope' => request('scope'),
+            'auth.state' => request('state'),
+        ]);
+
+        return $this->handleGithubAuth($request);
     }
 
 }
