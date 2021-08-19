@@ -11,6 +11,7 @@
         "graham-campbell/markdown": "^13.1",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.54",
+        "laravel/passport": "^10.1",
         "laravel/socialite": "^5.2",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.5",
