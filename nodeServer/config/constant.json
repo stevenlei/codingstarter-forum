@@ -1,0 +1,18 @@
+{
+    "SECRET": "MYSECRET", 
+
+    "SUCCESS": 200,
+    "SUCCESS_DESC": "SUCCESS",
+
+    "LOGIN_SUCCESS": 400,
+    "LOGIN_SUCCESS_DESC": "登录成功",
+
+    "SYSERR":500,
+    "SYSERR_DESC":"系统错误",
+    
+    "NEED_LOGIN": 401,
+    "NEED_LOGIN_DESC": "需要重新登录",
+
+    "LOGIN_FAILED": 402,
+    "LOGIN_FAILED_DESC": "登录失败"
+}
