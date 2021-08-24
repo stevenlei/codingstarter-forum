@@ -1,0 +1,23 @@
+{
+  "name": "nodekoa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "qianls",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.13.1",
+    "koa-jwt": "^4.0.1",
+    "koa-router": "^10.0.0",
+    "md5": "^2.3.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.12",
+    "request": "^2.88.2",
+    "socket.io": "^4.1.3"
+  }
+}
